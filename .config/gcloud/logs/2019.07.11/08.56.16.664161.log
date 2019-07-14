@@ -1,0 +1,41 @@
+2019-07-11 08:56:16,687 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute']
+2019-07-11 08:56:16,691 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'addresses']
+2019-07-11 08:56:16,699 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'addresses', u'list']
+2019-07-11 08:56:16,703 DEBUG    root            Running [gcloud.compute.addresses.list] with arguments: []
+2019-07-11 08:56:16,895 INFO     root            Display format: "        table(
+          name,
+          address_range():label=ADDRESS/RANGE,
+          address_type:label=TYPE,
+          purpose,
+          network.basename(),
+          region.basename(),
+          subnetwork.basename():label=SUBNET,
+          status
+        )"
+2019-07-11 08:56:37,065 DEBUG    root            (gcloud.compute.addresses.list) Some requests did not succeed:
+ - Insufficient Permission: Request had insufficient authentication scopes.
+Traceback (most recent call last):
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 797, in Run
+    display_info=self.ai.display_info).Display()
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/calliope/display.py", line 483, in Display
+    self._printer.Print(self._resources)
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_printer_base.py", line 274, in Print
+    for resource in resources:
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/core/util/peek_iterable.py", line 206, in next
+    return self.__next__()
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/core/util/peek_iterable.py", line 211, in __next__
+    item = self._NextItem()
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/core/util/peek_iterable.py", line 183, in _NextItem
+    return next(self._iterable)
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/lister.py", line 1053, in __call__
+    utils.RaiseException(errors, ListException)
+  File "/usr/lib64/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 129, in RaiseException
+    errors))
+ListException: Some requests did not succeed:
+ - Insufficient Permission: Request had insufficient authentication scopes.
+
+2019-07-11 08:56:37,066 ERROR    root            (gcloud.compute.addresses.list) Some requests did not succeed:
+ - Insufficient Permission: Request had insufficient authentication scopes.
+
